@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple blog</title>
+    <link rel="stylesheet" href="./../styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.0.0/material-components-web.css" integrity="sha512-j9A2LKfsPKqkj4NbtVncb6451JV3kQWoCP1Coayq04haUgIUTs3t2N0vn0kbtS7CsKVP2O9RvfQI4YYjURVxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script async type="module" src="./../index.js"></script>
+</head>
+<body>
+    <div id="root">
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <a href="/auth" class="link link--white nodisplay" id="authLink">Авторизация</a>
+                <a href="/posts/create/" class="link link--white nodisplay" id="createPost">Добавить пост</a>
+            </section>
+            </div>
+        </header>
+
+        <main class="mdc-top-app-bar--fixed-adjust"></main>
+    </div>
+</body>
+</html>

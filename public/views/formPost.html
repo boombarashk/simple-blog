@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit post</title>
+    <link rel="stylesheet" href="/styles.css"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-components-web/14.0.0/material-components-web.css" integrity="sha512-j9A2LKfsPKqkj4NbtVncb6451JV3kQWoCP1Coayq04haUgIUTs3t2N0vn0kbtS7CsKVP2O9RvfQI4YYjURVxIA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script async type="module" src="/form.js"></script>
+</head>
+<body>
+<div id="root">
+    <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <a href="/" class="link link--white" title="На главную">
+                    <button class="material-icons mdc-top-app-bar__home-icon mdc-icon-button">home</button>
+                </a>
+            </section>
+        </div>
+    </header>
+
+    <main class="mdc-top-app-bar--fixed-adjust">
+        <form class="post-form">
+            <div class="post-form-row"><label>
+                <span class="post-form__label">Заголовок поста</span>
+                <input class="post-form__input" name="title" type="text"  aria-labelledby="title">
+            </label>
+            </div>
+            <div class="post-form-row"><label>
+                <span class="post-form__label">Содержимое поста</span>
+                <textarea class="post-form__input" rows="8" cols="40" aria-label="Label" name="body"></textarea>
+            </label>
+            </div>
+            <div class="post-form-row">
+                <button class="mdc-button mdc-button--raised" type="submit" id="submitBtn">
+                    <span class="mdc-button__label">Сохранить</span>
+                </button>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>
