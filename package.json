@@ -4,7 +4,7 @@
   "description": "simple blog",
   "main": "index.js",
   "scripts": {
-    "build": "cp -R /public /build/public && npm install --only=dev && webpack --mode development --config webpack.config.js",
+    "build": "cp -R public build && npm install --only=dev && webpack --mode development --config webpack.config.js",
     "start": "node ./build/server.js",
     "start:dev": "nodemon index.js"
   },
