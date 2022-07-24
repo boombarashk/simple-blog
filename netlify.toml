@@ -1,2 +1,2 @@
 [build]
-    base="public"
+    base="build"
