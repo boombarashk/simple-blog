@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'public', 'scripts')))
 app.use(express.static(path.join(__dirname, 'public', 'views')))
+app.use(express.static(path.join(__dirname, 'doc')))
 
 
 // parse application/x-www-form-urlencoded
@@ -17,7 +18,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/', indexRoutes)
-
 try {
     app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}`)

@@ -6,9 +6,22 @@ const {login, register} = require('../services/auth')
 const router = express.Router()
 
 router.get('/auth', async (req, res) => {
-    res.sendFile('public/views/formAuth.html', {root: path.dirname(__dirname)})
+    res.sendFile(path.resolve('public/views/formAuth.html'))
 })
+/**
+ * @apiDefine AuthParam
+ * @apiParam {String} login
+ * @apiParam {String} password
+ */
 
+/**
+ * @api {post} /login authorization
+ * @apiName Login
+ * @apiGroup Auth
+ * @apiUse AuthParam
+ *
+ * @apiSuccess {String} token
+ */
 router.post('/login', async (req, res) => {
     try {
         const response = await login(req.body)
@@ -22,6 +35,14 @@ router.post('/login', async (req, res) => {
     }
 })
 
+/**
+ * @api {post} /register registration
+ * @apiName Register
+ * @apiGroup Auth
+ * @apiUse AuthParam
+ *
+ * @apiSuccess {String} token
+ */
 router.post('/register', async (req, res) => {
     try {
         const item = await register(req.body)

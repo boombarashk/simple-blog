@@ -1,5 +1,5 @@
 const express = require('express')
-
+const path  = require('path')
 const authRoutes = require('./auth')
 const postRoutes = require('./posts')
 
@@ -9,7 +9,11 @@ router.use('/', authRoutes)
 router.use('/posts', postRoutes)
 
 router.get('/', (req, res) => {
-    res.sendFile('public/views/index.html')
+    res.sendFile(path.resolve('public/view/index.html'))
+})
+
+router.get('/doc', (req, res) => {
+    res.sendFile(path.resolve('doc/index.html'))
 })
 
 module.exports = router

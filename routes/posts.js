@@ -6,6 +6,14 @@ const {getPosts, getPost, setPost, deletePost, updatePost} = require('../service
 
 const router = express.Router()
 
+/**
+ * @apiDefine PostParam
+ * @apiParam {String} author Id user
+ * @apiParam {String} title
+ * @apiParam {Text} body innerHTML
+ * @apiParam {Timestamp} created_at
+ */
+
 const isAuth = async (req, res, next) => {
     try {
         const token = checkHeaderAuthorization(req.headers)
@@ -25,13 +33,23 @@ const isAuth = async (req, res, next) => {
 }
 
 router.get('/create', async (req, res) => {
-    res.sendFile('public/views/formPost.html', {root: path.dirname(__dirname)})
+    res.sendFile(path.resolve('public/views/formPost.html'))
 })
 
 router.get('/edit/:postId', async (req, res) => {
-    res.sendFile('public/views/formPost.html', {root: path.dirname(__dirname)})
+    res.sendFile(path.resolve('public/views/formPost.html'))
 })
 
+/**
+ * @api {post} /posts/:id set post
+ * @apiHeaderExample {json} Header-Example:
+ *     {
+ *       "Authorization": "Bearer token"
+ *     }
+ * @apiName Create
+ * @apiGroup Posts
+ * @apiUse PostParam
+ */
 router.post('/', isAuth, async (req, res) => {
     try {
         const {title, body} = req.body
@@ -44,6 +62,16 @@ router.post('/', isAuth, async (req, res) => {
     }
 })
 
+/**
+ * @api {put} /posts/edit/:id edit post
+ * @apiHeaderExample {json} Header-Example:
+ *     {
+ *       "Authorization": "Bearer token"
+ *     }
+ * @apiName Edit
+ * @apiGroup Posts
+ * @apiUse PostParam
+ */
 router.put('/edit/:postId', isAuth, async (req, res) => {
     try {
         const {postId} = req.params
@@ -55,7 +83,21 @@ router.put('/edit/:postId', isAuth, async (req, res) => {
     }
 })
 
-
+/**
+ * @api {get} /posts/:id get post
+ * @apiHeaderExample {json} Header-Example:
+ *     {
+ *       "Authorization": "Bearer token"
+ *     }
+ * @apiName Post data
+ * @apiGroup Posts
+ *
+ * @apiSuccess {String} id post id
+ * @apiSuccess {String} author user id
+ * @apiSuccess {String} title
+ * @apiSuccess {Text} body innerHTML
+ * @apiSuccess {Timestamp} created_at
+ */
 router.get('/:id', async (req, res) => {
     try {
         const postId = req.params.id
@@ -67,6 +109,13 @@ router.get('/:id', async (req, res) => {
     }
 })
 
+/**
+ * @api {get} /posts/ get posts
+ * @apiName List
+ * @apiGroup Posts
+ *
+ * @apiSuccess {Array} posts
+ */
 router.get('/', async (req, res) => {
     try {
         const posts = await getPosts()
@@ -77,6 +126,15 @@ router.get('/', async (req, res) => {
     }
 })
 
+/**
+ * @api {delete} /posts/:id delete post
+ * @apiHeaderExample {json} Header-Example:
+ *     {
+ *       "Authorization": "Bearer token"
+ *     }
+ * @apiName Delete
+ * @apiGroup Posts
+ */
 router.delete('/:id', isAuth, async (req, res) => {
     try {
         const postId = req.params.id
