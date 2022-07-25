@@ -4,9 +4,9 @@
   "description": "simple blog",
   "main": "index.js",
   "scripts": {
-    "build": "npm install && webpack --mode development --config webpack.config.js",
     "start": "node ./build/server.js",
     "start:dev": "nodemon index.js",
+    "build": "npm install && webpack --mode development --config webpack.config.js && npm run start",
     "apidoc": "apidoc -i routes/ -o doc/ "
   },
   "author": "boombarashk",
