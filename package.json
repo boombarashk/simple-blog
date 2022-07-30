@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "build": "netlify-lambda build express",
+    "build": "npm install && webpack --mode development --config webpack.config.js && netlify-lambda build express",
     "apidoc": "apidoc -i routes/ -o doc/ "
   },
   "author": "boombarashk",
@@ -20,6 +20,7 @@
     "http": "^0.0.1-security",
     "jsonwebtoken": "^8.5.1",
     "md5": "^2.3.0",
+    "serverless": "^3.21.0",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
