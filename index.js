@@ -1,14 +1,13 @@
 const express  = require('express')
 const path  = require('path')
-const http = require('http');
+const serverless = require('serverless-http');
 const bodyParser = require('body-parser')
 const indexRoutes = require('./routes/index')
 
 const app = new express()
-const PORT = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, 'assets')))
-app.use(express.static(path.join(__dirname, 'views')))
+app.use(express.static(path.join(__dirname, 'public/scripts')))
+app.use(express.static(path.join(__dirname, 'public/views')))
 app.use(express.static(path.join(__dirname, 'doc')))
 
 
@@ -18,9 +17,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/', indexRoutes)
-try {
-    http.createServer(app).listen(PORT)
-} catch(e) {
-    console.log(e)
-    process.exit(1)
-}
+
+module.exports = app;
+module.exports.handler = serverless(app);

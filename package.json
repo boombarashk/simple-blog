@@ -2,11 +2,11 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "simple blog",
-  "main": "index.js",
+  "main": "functions/server.js",
   "scripts": {
-    "start": "node build/server.js",
+    "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "build": "npm install && webpack --mode development --config webpack.config.js && npm run start",
+    "build": "netlify-lambda build express",
     "apidoc": "apidoc -i routes/ -o doc/ "
   },
   "author": "boombarashk",
@@ -29,6 +29,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "dotenv": "^16.0.1",
     "html-loader": "^4.1.0",
+    "netlify-lambda": "^1.6.3",
     "nodemon": "^1.4.1",
     "webpack": "^5.73.0",
     "webpack-cli": "^4.10.0",
