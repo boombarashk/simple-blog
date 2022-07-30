@@ -7,7 +7,7 @@
     "start": "node index.js",
     "start:dev": "nodemon index.js",
     "webpack": "webpack --mode production --config webpack.config.js",
-    "build": "npm install && npm run webpack && netlify-lambda build express",
+    "build": "npm install && npm run webpack && netlify-lambda build build",
     "apidoc": "apidoc -i routes/ -o doc/ "
   },
   "author": "boombarashk",

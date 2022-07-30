@@ -6,7 +6,7 @@ module.exports = {
         server: './index.js',
     },
     output: {
-        path: __dirname + "/express",
+        path: __dirname + "/build",
         publicPath: '/',
         filename: '[name].js'
     },
