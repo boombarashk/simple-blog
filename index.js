@@ -1,5 +1,6 @@
 const express  = require('express')
 const path  = require('path')
+const cors = require('cors');
 const bodyParser = require('body-parser')
 const indexRoutes = require('./routes/index')
 
@@ -13,6 +14,8 @@ app.use(express.static(path.join(__dirname, 'doc')))
 app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
+
+app.use(cors())
 
 app.use('/', indexRoutes)
 try {
