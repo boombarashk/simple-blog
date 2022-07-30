@@ -6,8 +6,8 @@ const indexRoutes = require('./routes/index')
 
 const app = new express()
 
-app.use(express.static(path.join(__dirname, 'public/scripts')))
-app.use(express.static(path.join(__dirname, 'public/views')))
+app.use(express.static(path.join(__dirname, 'assets')))
+app.use(express.static(path.join(__dirname, 'views')))
 app.use(express.static(path.join(__dirname, 'doc')))
 
 
