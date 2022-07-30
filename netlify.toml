@@ -1,4 +1,3 @@
 [build]
-  publish = "express"
   command = "npm run build"
   functions = "functions"
