@@ -6,7 +6,7 @@ module.exports = {
         server: './index.js',
     },
     output: {
-        path: __dirname + '/build',
+        path: __dirname + "/build",
         publicPath: '/',
         filename: '[name].js'
     },
@@ -32,6 +32,9 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
+                { from: "public/styles.css", to: "assets/styles.css" },
+                { from: "public/views", to: "views" },
+                { from: "public/scripts", to: "assets" },
                 { from: "doc", to: "doc" }
             ]
         })
