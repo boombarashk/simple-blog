@@ -32,14 +32,6 @@ const isAuth = async (req, res, next) => {
     }
 }
 
-router.get('/create', async (req, res) => {
-    res.sendFile(path.resolve('public/views/formPost.html'))
-})
-
-router.get('/edit/:postId', async (req, res) => {
-    res.sendFile(path.resolve('public/views/formPost.html'))
-})
-
 /**
  * @api {post} /posts/:id set post
  * @apiHeaderExample {json} Header-Example:

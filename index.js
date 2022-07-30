@@ -6,9 +6,6 @@ const indexRoutes = require('./routes/index')
 const app = new express()
 const PORT = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, 'public')))
-app.use(express.static(path.join(__dirname, 'public/scripts')))
-app.use(express.static(path.join(__dirname, 'public/views')))
 app.use(express.static(path.join(__dirname, 'doc')))
 
 

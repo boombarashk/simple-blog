@@ -5,9 +5,6 @@ const {login, register} = require('../services/auth')
 
 const router = express.Router()
 
-router.get('/auth', async (req, res) => {
-    res.sendFile(path.resolve('public/views/formAuth.html'))
-})
 /**
  * @apiDefine AuthParam
  * @apiParam {String} login
