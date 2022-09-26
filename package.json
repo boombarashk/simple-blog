@@ -4,9 +4,9 @@
   "description": "simple blog",
   "main": "index.js",
   "scripts": {
-    "start": "node ./build/server.js",
+    "start": "node index.js",
     "start:dev": "nodemon index.js",
-    "build": "webpack --mode production --config webpack.config.js && npm run start",
+    "build": "webpack --mode production --config webpack.config.js",
     "apidoc": "apidoc -i routes/ -o doc/ "
   },
   "author": "boombarashk",
@@ -14,7 +14,6 @@
   "dependencies": {
     "apidoc": "^0.52.0",
     "body-parser": "^1.20.0",
-    "copy-webpack-plugin": "^11.0.0",
     "date-fns": "^2.28.0",
     "express": "^4.18.1",
     "firebase": "^9.9.0",
