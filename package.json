@@ -14,6 +14,7 @@
   "dependencies": {
     "apidoc": "^0.52.0",
     "body-parser": "^1.20.0",
+    "copy-webpack-plugin": "^11.0.0",
     "date-fns": "^2.28.0",
     "express": "^4.18.1",
     "firebase": "^9.9.0",
@@ -21,8 +22,7 @@
     "md5": "^2.3.0",
     "uuid": "^8.3.2",
     "webpack": "^5.73.0",
-    "webpack-cli": "^4.10.0",
-    "copy-webpack-plugin": "^11.0.0"
+    "webpack-cli": "^4.10.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.9",
