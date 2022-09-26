@@ -6,9 +6,7 @@ const indexRoutes = require('./routes/index')
 const app = new express()
 const PORT = process.env.PORT || 3000
 
-app.use(express.static(path.join(__dirname, 'assets')))
-app.use(express.static(path.join(__dirname, 'views')))
-app.use(express.static(path.join(__dirname, 'doc')))
+app.use(express.static(path.join(__dirname, 'public')))
 
 
 // parse application/x-www-form-urlencoded
